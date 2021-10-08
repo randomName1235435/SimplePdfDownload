@@ -8,4 +8,4 @@ function downloadPdfs {
     $urls |  where {$_.pathname -like "*pdf"} | % {Invoke-WebRequest -Uri "$site$($_.pathname)" -OutFile $_.pathname }
 }
 
-Grab-PDFs  -site "http://test.test/"
+downloadPdfs  -site "http://test.test/"
